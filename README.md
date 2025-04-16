@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/0e779bc9-66fb-43f6-bfa6-64810c94ddbc
+
 # Movie GraphRAG System
 
 Movie GraphRAG is an advanced movie recommendation system that combines graph-based data enrichment with semantic embedding retrieval and language generation for explainable recommendations. By leveraging a Neo4j graph database for structured relationships and transformer-based embeddings for content understanding, the system can answer complex natural language queries and provide transparent recommendations.
