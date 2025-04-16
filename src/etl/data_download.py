@@ -5,9 +5,9 @@ import time
 import urllib.request
 import zipfile
 import pandas as pd
-import requests
 from tqdm import tqdm
 from dotenv import load_dotenv
+from security import safe_requests
 
 load_dotenv()
 
@@ -38,7 +38,7 @@ def download_tmdb_data(movie_ids, api_key):
             continue
 
         url = f"{base_url}{movie_id}?api_key={api_key}&append_to_response=credits,keywords,similar"
-        response = requests.get(url)
+        response = safe_requests.get(url)
         if response.status_code == 200:
             with open(output_file, 'w') as f:
                 json.dump(response.json(), f)
