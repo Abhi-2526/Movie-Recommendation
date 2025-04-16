@@ -71,12 +71,6 @@ Follow these steps to set up the project. All commands should be run from the pr
 
 Clone the project repository and navigate to the project folder:
 
-```bash
-git clone https://your-repo-url.git
-cd movie-graphrag
-```
-
-**Note**: Replace `https://your-repo-url.git` with the actual repository URL provided by your project host (e.g., GitHub, GitLab).
 
 ### 2. Create and Activate a Virtual Environment
 
