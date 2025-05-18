@@ -4,8 +4,8 @@ import json
 from tqdm import tqdm
 import pandas as pd
 from dotenv import load_dotenv
-import random
 import numpy as np
+import secrets
 
 load_dotenv()
 
@@ -104,7 +104,7 @@ class Neo4jHandler:
 
         # Shuffle the files to get a random sample if we don't have specific selections
         if selected_movie_ids is None or len(selected_movie_ids) == 0:
-            random.shuffle(tmdb_files)
+            secrets.SystemRandom().shuffle(tmdb_files)
             tmdb_files = tmdb_files[:max_movies]  # Take only max_movies
         else:
             # Filter files based on our selection
