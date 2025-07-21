@@ -3,6 +3,7 @@ import requests
 import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
+from security import safe_requests
 
 
 # Set up page configuration and API URL
@@ -29,7 +30,7 @@ def api_request(endpoint, params=None, json_data=None, method="get"):
     API_URL = "http://localhost:8000"
     try:
         if method == "get":
-            response = requests.get(f"{API_URL}/{endpoint}", params=params)
+            response = safe_requests.get(f"{API_URL}/{endpoint}", params=params)
         else:
             response = requests.post(f"{API_URL}/{endpoint}", json=json_data)
         response.raise_for_status()
