@@ -29,9 +29,9 @@ def api_request(endpoint, params=None, json_data=None, method="get"):
     API_URL = "http://localhost:8000"
     try:
         if method == "get":
-            response = requests.get(f"{API_URL}/{endpoint}", params=params)
+            response = requests.get(f"{API_URL}/{endpoint}", params=params, timeout=60)
         else:
-            response = requests.post(f"{API_URL}/{endpoint}", json=json_data)
+            response = requests.post(f"{API_URL}/{endpoint}", json=json_data, timeout=60)
         response.raise_for_status()
         return response.json()
     except requests.exceptions.RequestException as e:
